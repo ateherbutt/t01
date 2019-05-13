@@ -165,18 +165,6 @@ local function processObjectList()
 	objectList = tempObjectList
 end
 
-OnDraw(function(myHero)
-	if debug then
-		for _,obj in pairs(buffList) do
-			local origin = GetOrigin(obj)
-			if origin then
-				local distance = passtiveList[GetObjectBaseName(obj)]
-				DrawCircle(origin.x+distance.x,origin.y+distance.y,origin.z,100,0,0,0xffffffff)
-			end
-		end	
-	end
-end)
-
 addResetAASpell(function()
 	if CanUseSpell(myHero,_E) == READY then
    	CastSpell(_E)
