@@ -159,26 +159,3 @@ local function processObjectList()
 	end
 	objectList = tempObjectList
 end
-
-OnCreateObj(function(object)
-	if passtiveList[GetObjectBaseName(object)] then
-		table.insert(objectList, object)
-	end
-
-	if debug and GetObjectBaseName(object):find("Fiora_Base") and not GetObjectBaseName(object):lower():find("speed")then
-		PrintChat(
-			""..GetObjectBaseName(object).."  "..
-			"IsVisible : "..tostring(IsVisible(object)).."  "..
-			"GetTeam : "..GetTeam(object).."  "..
-			"IsTargetable : "..tostring(IsTargetable(object)).."  "
-			)
-	end
-end)
-
-OnDeleteObj(function(object)
-	if passtiveList[GetObjectBaseName(object)] then
-		buffList[GetNetworkID(object)] = nil
-	end
-end)
-
-PrintChat("simple fiora loaded")
