@@ -77,7 +77,7 @@ local LocalControlCastSpell = Control.CastSpell;
 local LocalControlKeyUp = Control.KeyUp;
 local LocalControlKeyDown = Control.KeyDown;
 local LocalControlMove = Control.Move;
-local LocalGetTickCount = GetTickCount;
+local LocalGetCount = GetTickCount;
 local LocalGamecursorPos = Game.cursorPos;
 local LocalGameCanUseSpell = Game.CanUseSpell;
 local LocalGameLatency = Game.Latency;
@@ -165,21 +165,6 @@ local function processObjectList()
 	end
 	objectList = tempObjectList
 end
-
-OnTick(function(myHero)
-	processObjectList()
-	local buff_pos, distance = getNearestPos()
-	if buff_pos and combo.getValue() and distance > 100 then
-		if CanUseSpell(myHero,_Q) == READY and distance < GetCastRange(myHero,_Q) then
-   		CastSkillShot(_Q,buff_pos)
-   	elseif not canAttack() and canMove() then
-   		canMove(false)
-   		MoveToXYZ(buff_pos)
-   	end
-  else
-  	canMove(true)
-	end
-end)
 
 OnDraw(function(myHero)
 	if debug then
