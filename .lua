@@ -160,12 +160,6 @@ local function processObjectList()
 	objectList = tempObjectList
 end
 
-OnProcessSpellComplete(function(unit, spell)
-  if unit == myHero and spell.name == "FioraE" then
-		resetAA()
-  end
-end)
-
 OnCreateObj(function(object)
 	if passtiveList[GetObjectBaseName(object)] then
 		table.insert(objectList, object)
