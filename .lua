@@ -77,7 +77,6 @@ local LocalControlCastSpell = Control.CastSpell;
 local LocalControlKeyUp = Control.KeyUp;
 local LocalControlKeyDown = Control.KeyDown;
 local LocalControlMove = Control.Move;
-local LocalGetCount = GetTickCount;
 local LocalGamecursorPos = Game.cursorPos;
 local LocalGameCanUseSpell = Game.CanUseSpell;
 local LocalGameLatency = Game.Latency;
