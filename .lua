@@ -65,11 +65,6 @@ local _find = string.find
 local _sub = string.sub
 local _len = string.len
 
-local LocalDrawLine = Draw.Line;
-local LocalDrawColor = Draw.Color;
-local LocalDrawCircle = Draw.Circle;
-local LocalDrawCircleMinimap = Draw.CircleMinimap;
-local LocalDrawText = Draw.Text;
 local LocalControlIsKeyDown = Control.IsKeyDown;
 local LocalControlMouseEvent = Control.mouse_event;
 local LocalControlSetCursorPos = Control.SetCursorPos;
